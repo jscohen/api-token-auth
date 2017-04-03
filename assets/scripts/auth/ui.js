@@ -22,6 +22,7 @@ const signInFailure = (error) => {
 
 const signOutSuccess = () => {
   console.log('sign out success ran with no returns')
+  store.user = {}
 }
 
 const signOutFailure = (error) => {
