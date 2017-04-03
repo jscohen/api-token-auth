@@ -1,9 +1,7 @@
-#!/bin/bash
-
-# curl "http://localhost:3000/sign-out/$ID" \
-curl "http://httpbin.org/delete?id=$ID" \
+#ID=20 TOKEN=BAhJIiVlMmIyYWI1YTRkNmYzNDU2NDY1YzE3ZTY2ODM0MmZjYQY6BkVG--16ab6be460d9c087d497bd90b08fca3fe5d61b6c scripts/sign-out.sh
+API="${API_ORIGIN:-http://localhost:4741}"
+URL_PATH="/sign-out/$ID"
+curl "${API}${URL_PATH}" \
   --include \
-  --request DELETE
-
-# data output from curl doesn't have a trailing newline
-echo
+  --request DELETE \
+  --header "Authorization: Token token=$TOKEN"
